@@ -1,7 +1,7 @@
 # PropHunt
-Prop Hunt for the Private Server 6.5.2
+Prop Hunt for the Private Server 6.7.2
 
-**Works on 6.5.2**
+**Works on 6.7.2**
 
 **Requires Horocore**
 
