@@ -10,27 +10,26 @@ class DEADBYDAYLIGHT_API UKillerIntroComponent : public UActorComponent
 {
 	GENERATED_BODY()
 
-private:
-	UPROPERTY(EditDefaultsOnly)
+public:
+	UPROPERTY(BlueprintReadWrite, EditAnywhere)
 	float _percentOfCameraPanInProgressRequiredToHideKiller;
 
-	UPROPERTY(EditDefaultsOnly)
+	UPROPERTY(BlueprintReadWrite, EditAnywhere)
 	float _cameraPanInAmountToSquish;
 
-	UPROPERTY(EditDefaultsOnly)
+	UPROPERTY(BlueprintReadWrite, EditAnywhere)
 	EFPVTransitionStrategy _cameraPanInHidingStrategy;
 
-	UPROPERTY(EditDefaultsOnly)
+	UPROPERTY(BlueprintReadWrite, EditAnywhere)
 	float _startKillerIntroDelay;
 
-private:
-	UFUNCTION()
+	UFUNCTION(BlueprintCallable)
 	void OnLevelReadyToPlay();
 
-	UFUNCTION()
+	UFUNCTION(BlueprintCallable)
 	void OnIntroCompleted();
 
-	UFUNCTION()
+	UFUNCTION(BlueprintCallable)
 	void KillerCameraPanInUpdateNative(const float killerIntroCompletedPercent);
 
 public:

@@ -29,134 +29,134 @@ class DEADBYDAYLIGHT_API AProceduralLevelBuilder : public AActor
 	GENERATED_BODY()
 
 public:
-	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	FString PathToMapDirectory;
 
-	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	FString PathToTilesDirectory;
 
-	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	float KillerMinProximityFromCamper;
 
-	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	float SurvivorMinProximityFromOtherCamper;
 
-	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	float MinProximityBetweenGenerators;
 
-	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	float MinProximityBetweenChests;
 
-	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	float MinProximityBetweenTotems;
 
-	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	float SurvivorMinProximityFromGenerator;
 
-	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	float SurvivorMinProximityFromTotem;
 
-	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	float SurvivorMaxLineOfSightFromTotem;
 
-	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	float MinProximityBetweenSpecialBehaviourItems;
 
-	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	float SpecialBehaviourItemMinProximityFromSurvivor;
 
-	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	float SpecialBehaviourItemMinProximityFromKiller;
 
-	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	TSubclassOf<UPaperTileMap> DebugMap;
 
-	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	TArray<TSubclassOf<ATile>> DebugTiles;
 
-	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	float SmallMeatLockerMinProximityFromKillerLair;
 
-	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	float FactorToAdjustToWhenOutOfProximity;
 
-	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	float FactorToAdjustToWhenInLineOfSight;
 
-	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	float HeightAmplifier;
 
-	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	float HeightAmplifierActivationHeight;
 
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Transient)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Transient)
 	UProceduralGenerationData* ProceduralGenerationData;
 
-	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	float TileWeightRateOfDecay;
 
-	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	float QuadTileWeightRateOfDecay;
 
-private:
-	UPROPERTY()
+public:
+	UPROPERTY(BlueprintReadWrite, EditAnywhere)
 	UClass* _tileClass;
 
-	UPROPERTY()
+	UPROPERTY(BlueprintReadWrite, EditAnywhere)
 	UMapData* _mapData;
 
-	UPROPERTY()
+	UPROPERTY(BlueprintReadWrite, EditAnywhere)
 	UObjectLibrary* _availableTilesLibrary;
 
-	UPROPERTY()
+	UPROPERTY(BlueprintReadWrite, EditAnywhere)
 	UObjectLibrary* _availableDerivedTileLibrary;
 
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, meta=(AllowPrivateAccess=true))
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, meta=(AllowPrivateAccess=true))
 	TSubclassOf<UDBDDesignTunables> DesignTunableClass;
 
-	UPROPERTY(Transient)
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient)
 	UDBDDesignTunables* _designTunables;
 
-	UPROPERTY()
+	UPROPERTY(BlueprintReadWrite, EditAnywhere)
 	FGeneratedLevelData _generatedData;
 
-	UPROPERTY(Transient)
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient)
 	UTileMatrix* _tileMatrix;
 
-	UPROPERTY(Transient)
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient)
 	UTileBank* _tileBank;
 
-	UPROPERTY(Transient, Export)
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, Export)
 	UActorSpawner* _killerLairSpawner;
 
-	UPROPERTY(Transient)
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient)
 	TArray<FSoftObjectPath> _preloadAssetReferences;
 
-	UPROPERTY(Transient)
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient)
 	TArray<TSubclassOf<AActor>> _chestItemAssetReferences;
 
-	UPROPERTY(Transient)
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient)
 	UClass* _slasherPawn;
 
-	UPROPERTY(Transient)
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient)
 	TArray<ATile*> _tilesThatHaveBeenSpawned;
 
-	UPROPERTY(Transient)
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient)
 	AProceduralLevelData* _debugProceduralDatas;
 
 	UPROPERTY(Replicated, Transient)
 	ADBDClientSyncer* _syncer;
 
-	UPROPERTY(Transient, Export)
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient, Export)
 	UBlackboardComponent* _blackboardComp;
 
-	UPROPERTY(Transient)
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient)
 	UEdgeObjectHandlingStrategy* _edgeObjectHandlingStrategy;
 
-	UPROPERTY(Transient)
+	UPROPERTY(BlueprintReadWrite, EditAnywhere, Transient)
 	ATile* _backupKillerLairTile;
 
-private:
+public:
 	UFUNCTION()
 	void SyncSeeds();
 
@@ -170,11 +170,11 @@ public:
 	UFUNCTION(BlueprintImplementableEvent)
 	void RemoveMist();
 
-private:
+public:
 	UFUNCTION(NetMulticast, Reliable)
 	void Multicast_DebugShareGenerationData(FGenerationParams usedParams);
 
-	UFUNCTION()
+	UFUNCTION(BlueprintCallable)
 	void BuildFromSeed();
 
 public:
