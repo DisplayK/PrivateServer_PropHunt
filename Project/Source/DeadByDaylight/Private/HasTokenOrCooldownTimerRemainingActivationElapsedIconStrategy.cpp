@@ -1,6 +1,0 @@
-#include "HasTokenOrCooldownTimerRemainingActivationElapsedIconStrategy.h"
-
-UHasTokenOrCooldownTimerRemainingActivationElapsedIconStrategy::UHasTokenOrCooldownTimerRemainingActivationElapsedIconStrategy()
-{
-
-}

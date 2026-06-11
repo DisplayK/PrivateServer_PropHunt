@@ -1,6 +1,0 @@
-#include "ScoreSlasherGunslingerSlashHarpoonedSurvivorAchievement.h"
-
-UScoreSlasherGunslingerSlashHarpoonedSurvivorAchievement::UScoreSlasherGunslingerSlashHarpoonedSurvivorAchievement()
-{
-
-}

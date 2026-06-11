@@ -1,6 +1,0 @@
-#include "SpecialBehaviourIterativeWeightAdjustmentStrategy.h"
-
-USpecialBehaviourIterativeWeightAdjustmentStrategy::USpecialBehaviourIterativeWeightAdjustmentStrategy()
-{
-
-}
